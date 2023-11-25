@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_3</title>
+  </head>
+  <body> <p class="super_element">Привет</p>
+
+    <img src="https://placeimg.com/50/50/animals" alt="">
+    <img src="https://placeimg.com/50/50/arch" alt="">
+    <img src="https://placeimg.com/50/50/nature" alt="">
+    <img src="https://placeimg.com/50/50/people" alt="">
+    <img src="https://placeimg.com/50/50/tech" alt="">
+    <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+    <img src="https://placeimg.com/50/50/tech/sepia" alt="">
+
+    <br>
+
+    <button>Кнопка</button>
+    <button class="super_element">Кнопка с классом btn</button>
+    <button>Кнопка</button>
+
+    <br>
+
+    <textarea></textarea>
+
+    <br>
+
+    <ul>
+      <li>
+        <button>Кнопка 1</button>
+      </li>
+      <li>
+        <button>Кнопка 2</button>
+      </li>
+      <li>
+        <button>Кнопка 3</button>
+      </li>
+      <li>
+        <button>Кнопка 4</button>
+      </li>
+    </ul>
+
+
+    <script>
+              "use strict";
+           
+// 1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Все теги прогрузились");
+});
+// 2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены.
+window.onload = () => {
+console.log('Страница со всеми ресурсами загружена полностью.') }
+
+// 3. При клике на какой-либо тег на странице в консоль должно выводиться сообщение наподобие:
+document.addEventListener('click', function(event) {
+  if (event.target.tagName.toLowerCase() !== 'html') {
+    let tagName = event.target.tagName.toLowerCase();
+    let classList = Array.from(event.target.classList);
+    let className = 'super_element';
+    if (classList.includes(className)) {
+      console.log(`Класс ${className} присутствует в элементе ${tagName}`);
+    } else {
+      console.log(`Класс ${className} отсутствует в элементе ${tagName}`);
+    }
+  }
+});
+// 4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение: "Вы навели на textarea."
+const textArea = document.querySelector('textarea');
+console.log(textArea);
+textArea.addEventListener('mouseover', function (e) {
+    console.log("Вы навели на textarea")
+});
+
+// // 2-й способ 
+// const textArea2 = document.querySelector('textarea');
+// console.log(textArea2);
+// document.addEventListener('mouseover', function (e) {
+//     if( event.target.tagName.toLowerCase() == 'textarea'){
+//     console.log("Вы навели на textarea")};
+
+//     });
+// 5. Необходимо повесить событие клика на тег ul.
+//  В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик.
+//  Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
+const ulElem = document.querySelector('ul');
+const button = document.querySelector('button');
+ulElem.addEventListener('click', function (e) {
+ if(event.target.tagName.toLowerCase() == 'button')
+ {console.log(`${button.textContent}`)}
+});
+// 6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? 
+// Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+// Получаем все теги li
+// Это происходит из-за того, что JavaScript выполняется синхронно и последовательно. Когда мы кликаем на кнопки в ul, событие click генерируется для соответствующего элемента li.
+//  Однако, код в обработчике события click не выполняется немедленно, а добавляется в очередь выполнения. 
+// В то же время, код в console.log в 5 задании уже был выполнен до момента клика на кнопке, поэтому его вывод появляется первым. 
+// Затем, после выполнения кода в console.log, код в обработчике события click начинает выполняться и выводится текст из 3 задания.
+// Таким образом, порядок вывода зависит от времени выполнения кода и очередности событий.
+
+// 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+const liElems = document.querySelectorAll('li');
+
+for (let i = 1; i < liElems.length; i += 2) {
+  liElems[i].style.backgroundColor = 'red';
+}
+
+    </script>
+  </body>
+</html>
