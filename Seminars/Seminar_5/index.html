@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Car_model</title>
+        <style>
+            
+            .product{
+                color: yellowgreen;
+                border: 2px solid black;
+               
+            }
+            .product_id{
+               color: red;
+            }
+            .car_name{
+             color: blue;
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content"></div>
+        <script src="data.js"></script>
+        <script>
+            const productContent = document.querySelector('.content');
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+
+            const data = JSON.parse((JSON.stringify(dataInfo)));
+            console.log(data);
+
+            data.forEach(element => {
+                    console.log(element.id,"-", element.name,"-",element.class,"-",element.url);
+            });
+            data.forEach(element => {
+
+                const productCarId = document.createElement('p');
+                productCarId.classList.add('product_id');
+                productCarId.textContent = element.id;
+
+                const productName = document.createElement('p');
+                productName.classList.add('car_name');
+                productName.textContent = element.name;
+
+                const productClass = document.createElement('p');
+                productClass.classList.add('car_class');
+                productClass.textContent = element.class;
+
+
+                const productUrl = document.createElement('a');
+                productUrl.href = 'https://www.shutterstock.com/ru/image-photo/otopeni-romania-september-17-2021-2022-2057072357';
+                productUrl.textContent = element.url;
+
+
+                productContent.appendChild(productEl);
+                productEl.appendChild(productCarId);
+                productEl.appendChild(productName);
+                productEl.appendChild(productClass);
+                productEl.appendChild(productUrl);
+             
+        });
+</script>
+
+    </body>
+</html>
