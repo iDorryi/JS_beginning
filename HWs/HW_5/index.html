@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&family=Open+Sans&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700;1,900&family=Open+Sans&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online_mall</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+    </head>
+    <body>
+
+        <h1 class="title_bottom">Featured items</h1>
+        <h2 class="subtitle_bottom">Shop for items based on&nbsp;what we
+            featured in&nbsp;this week</h2>
+
+        <main class="bottom center">
+            <div class="bottom_item">
+                <img class="bottom_item_img" src="../HW_5/img/img1.png"
+                    alt="img1">
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up&nbsp;with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+                </div>
+            </div>
+            <div class="bottom_item i2_top">
+                <div class="img_item_div">
+                    <img class="img_item2" src="../HW_5/img/Image2.png"
+                        alt="item_2_top">
+                </div>
+
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up&nbsp;with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+                </div>
+            </div>
+            <div class="bottom_item">
+                <img class="bottom_item_img" src="../HW_5/img/img3.png"
+                    alt="img3">
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up&nbsp;with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+                </div>
+            </div>
+            <div class="bottom_item">
+                <img class="bottom_item_img" src="../HW_5/img/Img4.png"
+                    alt="img4">
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up&nbsp;with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+                </div>
+            </div>
+            <div class="bottom_item">
+                <img class="bottom_item_img" src="../HW_5/img/img5.png"
+                    alt="img5">
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up&nbsp;with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+                </div>
+            </div>
+            <div class="bottom_item">
+                <img class="bottom_item_img" src="../HW_5/img/img6.png"
+                    alt="img6">
+                <div class="bottom_item_content">
+                    <h1 class="bottom_item_heading">ELLERY X&nbsp;M&rsquo;O CAPSULE</h1>
+                    <p class="bottom_item_text">Known for her sculptural takes
+                        on
+                        traditional tailoring, Australian arbiter of
+                        cool
+                        Kym
+                        Ellery
+                        teams up with Moda Operandi.</p>
+                    <h2 class="bottom_item_price">$52.00</h2>
+
+                </div>
+            </div>
+        </main>
+        <div class="bot">
+            <a class="bot_note" href="#">Browse All Product</a>
+        </div>
+        <script src="data.js"></script>
+        <script>
+         
+            const data = JSON.parse((JSON.stringify(dataInfo)));
+            console.log(data);
+
+            data.forEach(element => {
+                    console.log(element.img,"-", element.heading,"-",element.text,"-",element.price);
+            });
+            data.forEach(element => {
+                
+            const productBox = document.querySelector('.bottom')
+            const productEl = document.createElement('div');
+            productEl.classList.add('bottom_item');
+
+            
+            const productImg = document.createElement('img');
+            productImg.classList.add('bottom_item_img');
+            productImg.src = element.img;
+            
+           
+            const productContentEl = document.createElement('div');
+            productContentEl.classList.add('bottom_item_content');
+            
+
+            const productHeading = document.createElement('p');
+            productHeading.classList.add('bottom_item_heading');
+            productHeading.textContent = element.heading;
+
+            const productText = document.createElement('p');
+            productText.classList.add('bottom_item_text');
+            productText.textContent = element.text;
+
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('bottom_item_price');
+            productPrice.textContent = element.price;
+
+            productBox.appendChild(productEl);
+            productEl.appendChild(productImg);
+            productEl.appendChild(productContentEl);
+            productContentEl.appendChild(productHeading);
+            productContentEl.appendChild(productText);
+            productContentEl.appendChild(productPrice);
+
+        });
+
+    
+        </script>
+    </body>
